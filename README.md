@@ -1,20 +1,24 @@
 ## bip39scan - Brute Pool
 ![o1AJ9qDyyJNSpZLSMmjZp1oHDUkVhqVqHnDVdzwQYjHMFBpSr](https://github.com/phrutis/bip39scan/assets/140947743/5e506934-c615-4fa9-aa1a-d3a41e16ff5f)
 
-### The bip39scan project will be launched soon.<br>
-### Stay tuned for the repo update!<br>
+### The Bip39Scan Pool is Coming Soon!
 
-The pool uses the fastest program in the world.<br>
-The program used the best libraries to speed up the algorithm.<br> 
-Thanks to a professional programmer, we managed to achieve a speed of 3090 = 5M/s (5000000 seed/s)
+### Stay tuned to this repo for updates!
 
-We are looking for accounts from $100,000 and above.
+This pool will be the fastest search pool in the world, using the latest GPU libraries and having a programmer stand by the project through testing.<br>
+
+We managed to achieve a speed of 3090 = 5M/s (5000000 seed/s)<br>
+
+We will be looking for accounts from $100,000 and above.<br>
 
 If you are ready to search with us 24/7, join us.<br>
-Telegram:
-https://t.me/+vRnYqhtnbdw0ZDEx
 
-Your income from the find will be 70%<br>
-Organizers receive 30%
+Telegram: https://t.me/+k1jKsx_fxTo1MzQx<br>
+Launch, Connection and Questions will be posted in Group.<br>
 
-% of the pool may be made after a major find.
+Miners to share 70% of find based on contribution.<br>
+There are no finder rewards since this works on a group effort.
+
+Organizers 30%
+
+% of the pool may be made after a major find..
