@@ -13,6 +13,8 @@ We will be looking for accounts from $100,000 and above.<br>
 
 If you are ready to search with us 24/7, join us.<br>
 
+Telegram: https://t.me/+k1jKsx_fxTo1MzQx<br>
+Launch, Connection and Questions will be posted in Group.<br>
 ## Performance
 
 | GPUs card     | Speed   | RAM | Power %|
@@ -23,11 +25,6 @@ If you are ready to search with us 24/7, join us.<br>
 | Tesla V100    | 3.7 M/s | ?GB | ?%     |
 
 *M (million seeds per second)
-
-
-
-Telegram: https://t.me/+k1jKsx_fxTo1MzQx<br>
-Launch, Connection and Questions will be posted in Group.<br>
 
 Miners to share 70% of find based on contribution.<br>
 There are no finder rewards since this works on a group effort.
