@@ -13,6 +13,19 @@ We will be looking for accounts from $100,000 and above.<br>
 
 If you are ready to search with us 24/7, join us.<br>
 
+## Performance
+
+| GPUs card     | Speed   | RAM | Power %|
+|---------------|---------|-----|--------|
+| RTX 3090      | 5.5 M/s | ?GB | ?%     |
+| RTX 3080 Ti   | 5.3 M/s | ?GB | ?%     |
+| RTX 2060      | 1.5 M/s | ?GB | ?%     |
+| Tesla V100    | 3.7 M/s | ?GB | ?%     |
+
+*M (million seeds per second)
+
+
+
 Telegram: https://t.me/+k1jKsx_fxTo1MzQx<br>
 Launch, Connection and Questions will be posted in Group.<br>
 
