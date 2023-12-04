@@ -19,7 +19,7 @@ Launch, Connection and Questions will be posted in Group.<br>
 
 | GPUs card     | Speed   | RAM | Power  |
 |---------------|---------|-----|--------|
-| RTX 4090      | 10 M/s | ?GB | ?%     |
+| RTX 4090      | 11 M/s | ?GB | ?%     |
 | RTX 3090      | 5.5 M/s | ?GB | ?%     |
 | RTX 3080 Ti   | 5.3 M/s | ?GB | ?%     |
 | RTX 2060      | 1.5 M/s | ?GB | ?%     |
