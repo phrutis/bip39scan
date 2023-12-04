@@ -17,8 +17,9 @@ Telegram: https://t.me/+k1jKsx_fxTo1MzQx<br>
 Launch, Connection and Questions will be posted in Group.<br>
 ## Performance
 
-| GPUs card     | Speed   | RAM | Power %|
+| GPUs card     | Speed   | RAM | Power  |
 |---------------|---------|-----|--------|
+| RTX 4090      | 10 M/s | ?GB | ?%     |
 | RTX 3090      | 5.5 M/s | ?GB | ?%     |
 | RTX 3080 Ti   | 5.3 M/s | ?GB | ?%     |
 | RTX 2060      | 1.5 M/s | ?GB | ?%     |
