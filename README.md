@@ -122,5 +122,14 @@ bip39scan.exe -s 96.56.157.172 -u Andrey255<br>
 (This will be easier in the future)<br>
 ```sudo mkdir BIP39SCAN && cd BIP39SCAN && sudo apt install libboost-all-dev && sudo apt install aria2 && sudo apt install unzip && sudo aria2c http://www.bip39scan.com/downloads/Bip39Scan-Linux.zip && unzip bip39scan_linux.zip && cd Bip39Scan-Linux && chmod +x bip39scan && bip39scan -s 96.56.157.172 -u Nickname```
 
-### Часто задаваемые вопросы ❓ 
+### Часто задаваемые вопросы ❓
+>Как узнать что я нашёл seed?
+>>В окне программы будет написано Found и найденный вами адрес.
+Этот адрес является вашим подтверждением что находку нашли именно вы.
+Его не нужно офишировать (писать в чате группы) до получения вознаграждения.
+В статистике на сайте bip39scan.com будет мигать жёлтым цветом ⭐
+Вам нужно написать одному из админов в телеграм для получения выплаты.
+
+>Куда пропала статистика на сайте?
+>>Каждые сутки статистика сервера сбрасывается
 
