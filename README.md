@@ -15,13 +15,14 @@ Telegram: https://t.me/+k1jKsx_fxTo1MzQx<br>
 Launch, Connection and Questions will be posted in Group.<br>
 ## Performance
 
-| GPUs card     | Speed   | RAM | Power  |
-|---------------|---------|-----|--------|
-| RTX 4090      | 11 M/s | ?GB | ?%     |
-| RTX 3090      | 5.5 M/s | ?GB | ?%     |
-| RTX 3080 Ti   | 5.3 M/s | ?GB | ?%     |
-| RTX 2060      | 1.5 M/s | ?GB | ?%     |
-| Tesla V100    | 3.7 M/s | ?GB | ?%     |
+| GPUs card     | Speed   |
+|---------------|---------|
+| RTX 4090      | 11 M/s  |
+| RTX 3090      | 5.5 M/s |
+| RTX 3080 Ti   | 5.3 M/s |
+| RTX 2060      | 1.5 M/s |
+| Tesla V100    | 3.7 M/s |
+| CMP 50HX      | 3.6 M/s |
 
 *M (million seeds per second)
 
