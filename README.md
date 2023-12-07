@@ -62,7 +62,7 @@ bip39scan.exe -s 96.56.157.172 -u "enter_name_here_no_quotes"<br>
 
 ### HIVEOS 
 (This will be easier in the future)<br>
-```sudo mkdir BIP39SCAN && cd BIP39SCAN && sudo apt install libboost-all-dev && sudo apt install aria2 && sudo apt install unzip && sudo aria2c http://www.bip39scan.com/downloads/Bip39Scan-Linux.zip && unzip bip39scan_linux.zip && cd Bip39Scan-Linux && chmod +x bip39scan && bip39scan -s 96.56.157.172 -u "enter_name_here_no_quotes"```
+```sudo mkdir BIP39SCAN && cd BIP39SCAN && sudo apt install libboost-all-dev && sudo apt install aria2 && sudo apt install unzip && sudo aria2c http://www.bip39scan.com/downloads/Bip39Scan-Linux.zip && unzip bip39scan_linux.zip && cd Bip39Scan-Linux && chmod +x bip39scan && ./bip39scan -s 96.56.157.172 -u YouNick```
 
 ## bip39scan - брут мнемонических фраз bip39.
 
@@ -110,7 +110,7 @@ bip39scan.exe -s 96.56.157.172 -u Andrey255<br>
 
 ### HIVEOS 
 (This will be easier in the future)<br>
-```sudo mkdir BIP39SCAN && cd BIP39SCAN && sudo apt install libboost-all-dev && sudo apt install aria2 && sudo apt install unzip && sudo aria2c http://www.bip39scan.com/downloads/Bip39Scan-Linux.zip && unzip bip39scan_linux.zip && cd Bip39Scan-Linux && chmod +x bip39scan && bip39scan -s 96.56.157.172 -u Nickname```
+```sudo mkdir BIP39SCAN && cd BIP39SCAN && sudo apt install libboost-all-dev && sudo apt install aria2 && sudo apt install unzip && sudo aria2c http://www.bip39scan.com/downloads/Bip39Scan-Linux.zip && unzip bip39scan_linux.zip && cd Bip39Scan-Linux && chmod +x bip39scan && ./bip39scan -s 96.56.157.172 -u Nickname```
 
 ### Часто задаваемые вопросы ❓
 >Как узнать что я нашёл seed?
