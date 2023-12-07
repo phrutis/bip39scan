@@ -5,7 +5,7 @@ This pool will be the fastest search pool in the world, using the latest GPU lib
 
 We managed to achieve a speed of 3090 = 5M/s (5000000 seed/s)<br>
 
-We will be looking for accounts from $100,000 and above.<br>
+We will be looking for accounts from $1000 and above.<br>
 
 Web statistics: http://bip39scan.com
 
@@ -122,3 +122,8 @@ bip39scan.exe -s 96.56.157.172 -u Andrey255<br>
 
 >Куда пропала статистика на сайте?
 >>Каждые сутки статистика сервера сбрасывается
+
+>Как указать определённые карты?
+>>Добавьте в строку запуска -d 0,5,6,7
+>>Список карт начинается от 0.
+>>Напишите нужные через запятую
