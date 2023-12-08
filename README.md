@@ -5,7 +5,10 @@ This pool will be the fastest search pool in the world, using the latest GPU lib
 
 We managed to achieve a speed of 3090 = 5M/s (5000000 seed/s)<br>
 
-We will be looking for accounts from $1 and above.<br>
+We are currently looking for 22.2 million ETH addresses starting from $100<br>
+The database contains several thousand addresses over $80k.<br>
+The search is carried out in random mode<br>
+Random has a better chance of being found.
 
 Web statistics: http://bip39scan.com
 
@@ -70,7 +73,9 @@ bip39scan.exe -s 96.56.157.172 -u "enter_name_here_no_quotes"<br>
 🚀 Это самым быстрый пул в мире. 🚀<br>
 В программе используются быстрые алгоритмы и библиотеки.<br>
 Нам удалось достичь скорости RTX 3090 = 5М/с (5000000 seed/сек)<br>
-Ищем счета от $1 и выше в режиме рандом<br>
+Мы сейчас ищем 22,2 миллиона ETH адресов от $100<br>
+В базе присутствуют несколько тысяч адресов более $80к.<br>
+Поиск идёт в режиме рандом<br>
 У рандома больше шансов найти.
 
 ### Условия выплат 💰
