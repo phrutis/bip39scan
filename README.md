@@ -5,7 +5,7 @@ This pool will be the fastest search pool in the world, using the latest GPU lib
 
 We managed to achieve a speed of 3090 = 5M/s (5000000 seed/s)<br>
 
-We will be looking for accounts from $1000 and above.<br>
+We will be looking for accounts from $1 and above.<br>
 
 Web statistics: http://bip39scan.com
 
@@ -69,7 +69,7 @@ bip39scan.exe -s 96.56.157.172 -u "enter_name_here_no_quotes"<br>
 🚀 Это самым быстрый пул в мире. 🚀<br>
 В программе используются быстрые алгоритмы и библиотеки.<br>
 Нам удалось достичь скорости RTX 3090 = 5М/с (5000000 seed/сек)<br>
-Будем искать счета от $1000 и выше в режиме рандом<br>
+Ищем счета от $1 и выше в режиме рандом<br>
 У рандома больше шансов найти.
 
 ### Условия выплат 💰
