@@ -20,9 +20,10 @@ Launch, Connection and Questions will be posted in Group.<br>
 | RTX 4090      | 11 M/s  |
 | RTX 3090      | 5.5 M/s |
 | RTX 3080 Ti   | 5.3 M/s |
-| RTX 2060      | 1.5 M/s |
 | Tesla V100    | 3.7 M/s |
 | CMP 50HX      | 3.6 M/s |
+| RTX 3050      | 1.5 M/s |
+| RTX 2060      | 1.5 M/s |
 
 *M (million seeds per second)
 
