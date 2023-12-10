@@ -30,10 +30,10 @@ Launch, Connection and Questions will be posted in Group.<br>
 
 *M (million seeds per second)
 
-Miners to share 70% of find based on contribution.<br>
-There are no finder rewards since this works on a group effort.
-
-Organizers 30%
+Miners to share 50% of find based on contribution.<br>
+There are no finder rewards since this works on a group effort.<br>
+Organizers 30%<br>
+Pool 20%
 
 ## Run
 ### Ubuntu Client
@@ -79,8 +79,9 @@ bip39scan.exe -s 96.56.157.172 -u "enter_name_here_no_quotes"<br>
 У рандома больше шансов найти.
 
 ### Условия выплат 💰
-70% баланса находки выплачиваются тому кто нашел мнемоническую фразу.<br>
+50% баланса от находки выплачиваются тому кто нашел мнемоническую фразу.<br>
 30% баланса получают организаторы пула.<br>
+20% от баланса делится на всех охотников, кроме победителя.
 
 Если вы готовы искать вместе с нами 24/7, присоединяйтесь.<br>
 Telegram: https://t.me/+k1jKsx_fxTo1MzQx
@@ -119,17 +120,21 @@ bip39scan.exe -s 96.56.157.172 -u Andrey255<br>
 ```sudo mkdir BIP39SCAN && cd BIP39SCAN && sudo apt install libboost-all-dev && sudo apt install aria2 && sudo apt install unzip && sudo aria2c http://www.bip39scan.com/downloads/Bip39Scan-Linux.zip && unzip bip39scan_linux.zip && cd Bip39Scan-Linux && chmod +x bip39scan && ./bip39scan -s 96.56.157.172 -u Nickname```
 
 ### Часто задаваемые вопросы ❓
->Как узнать что я нашёл seed?
->>В окне программы будет написано Found и найденный вами адрес.
-Этот адрес является вашим подтверждением что находку нашли именно вы.
-Его не нужно офишировать (писать в чате группы) до получения вознаграждения.
-В статистике на сайте bip39scan.com будет мигать жёлтым цветом ⭐
+
+**Как узнать что я нашёл seed?**
+<br>
+на сайте bip39scan.com ⭐ будет мигать жёлтым цветом.<br>
+В окне вашей программы будет написано Found: найденный вами адрес.<br>
+Этот адрес является вашим подтверждением что находку нашли именно вы.<br>
+Адрес не нужно офишировать (писать в чате группы)<br>
 Вам нужно написать одному из админов в телеграм для получения выплаты.
 
->Куда пропала статистика на сайте?
->>Каждые сутки статистика сервера сбрасывается
+**Куда пропала статистика на сайте**
+<br>
+Каждые сутки (08:00 мск) статистика сервера сбрасывается
 
->Как указать определённые карты?
->>Добавьте в строку запуска -d 0,5,6,7
->>Список карт начинается от 0.
->>Напишите нужные через запятую
+**Как указать определённые карты?**
+<br>
+Добавьте в строку запуска -d 0,5,6,7<br>
+Список карт начинается от 0.<br>
+Укажите нужные карты через запятую
