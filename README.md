@@ -5,11 +5,9 @@ This pool will be the fastest search pool in the world, using the latest GPU lib
 
 We managed to achieve a speed of 3090 = 5M/s (5000000 seed/s)<br>
 
-We are currently looking for 22.2 million ETH addresses starting from $100<br>
-The database contains several thousand addresses over $80k.<br>
-The search is carried out in random mode<br>
-Random has a better chance of being found.
-
+We are currently looking all Legacy BTC addresses 1.. starting from $1<br>
+Brute mnemonic 6 words, bip32, patch m/0/0-19
+<br>
 Web statistics: http://bip39scan.com
 
 If you are ready to search with us 24/7, join us.<br>
@@ -73,10 +71,11 @@ bip39scan.exe -s 96.56.157.172 -u "enter_name_here_no_quotes"<br>
 🚀 Это самым быстрый пул в мире. 🚀<br>
 В программе используются быстрые алгоритмы и библиотеки.<br>
 Нам удалось достичь скорости RTX 3090 = 5М/с (5000000 seed/сек)<br>
-Мы сейчас ищем 22,2 миллиона ETH адресов от $100<br>
-В базе присутствуют несколько тысяч адресов более $80к.<br>
-Поиск идёт в режиме рандом<br>
-У рандома больше шансов найти.
+eы сейчас ищем все старые BTC адреса на 1... от $1.<br>
+Последовательный брут BIP32 6 слов.<br>
+Патч m/0/0-19
+
+
 
 ### Условия выплат 💰
 50% баланса от находки выплачиваются тому кто нашел мнемоническую фразу.<br>
