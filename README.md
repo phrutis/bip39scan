@@ -134,7 +134,7 @@ bip39scan.exe -s 96.56.157.172 -u Andrey255<br>
 
 **Как сделать скриншот?**
 <br>
-Windows Нажмите Ctrl + PrtSc, откройте Point Crrl + v обрезать и отправить в группу.
+Windows Нажмите Ctrl + PrtSc, откройте Point Ctrl + v обрезать и отправить в группу.
 
 **Как узнать что я нашёл seed?**
 <br>
