@@ -13,8 +13,6 @@ Web statistics: http://bip39scan.com
 If you are ready to search with us 24/7, join us.<br>
 Telegram: https://t.me/+k1jKsx_fxTo1MzQx<br>
 Launch, Connection and Questions will be posted in Group.<br>
-**If you are not ready, welcome to the main chat** <br>
-**https://t.me/wif500**
 
 ## Performance
 
