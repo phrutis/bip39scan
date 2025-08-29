@@ -48,6 +48,10 @@ Automatically detects the coin type based on the given patch. You can specify th
 <summary><b>1. Sequential search words</b></summary>
 
 ## 1. Sequential search words:
+**Replace unknown words with** **\***<br>
+**Standard random 2048 words in positions with** **\***<br>
+For Linux (Ubuntu) "\*"<br> 
+
 ```
 bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH -p m/44'/0'/0'/0/0-9 uncover figure script * obscure waste metal quit depend bachelor trust erupt * impose brave leave number rapid oak wealth reopen * noodle tragic
 ```
@@ -82,6 +86,7 @@ https://github.com/user-attachments/assets/2d9d24c7-8844-4de4-9e5d-7eba976d021e
 
 **Replace unknown words with** **\***<br>
 **Standard random 2048 words in positions with** **\***<br>
+For Linux (Ubuntu) "\*"<br> 
 ```
 bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 -r cause * shield option monkey infant tray okay remember * * *
 ```
@@ -113,6 +118,10 @@ bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/
 **For full random, add only stars**<br>
 **For older versions below 4.0.1 you need to specify seed!** <br>
 Read the question and answer at the bottom of the page<br>
+For Linux (Ubuntu) "\*"<br> 
+Ex. ./bip39scan -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44\'/60\'/0\'/0/0-2 -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"
+
+
 ```
 bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 -r * * * * * * * * * * * *
 ```
