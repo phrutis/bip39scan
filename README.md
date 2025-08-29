@@ -119,8 +119,8 @@ bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/
 **For older versions below 4.0.1 you need to specify seed!** <br>
 Read the question and answer at the bottom of the page<br>
 For Linux (Ubuntu) "\*"<br> 
-Ex. ./bip39scan -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44\'/60\'/0\'/0/0-2 -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"
-
+Ex. ./bip39scan -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44\'/60\'/0\'/0/0-2 -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"<br>
+![Image](https://github.com/user-attachments/assets/18393117-eaff-4a81-9eac-46d327207903)
 
 ```
 bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 -r * * * * * * * * * * * *
