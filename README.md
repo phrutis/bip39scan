@@ -24,7 +24,7 @@ Automatically detects the coin type based on the given patch. You can specify th
  
 | GPU card | 24 words | 18 words | 12 words | other brute | Mode 9 BIP32 |
 |----------|----------|----------|----------|-------------|--------------|
-| **RTX 5090** | **250M** mnemo/s	| **63M** mnemo/s	| **15M** mnemo/s | 700k entropy/s | **10M** entropy/s |
+| **RTX 5090** | **250M** mnemo/s	| **63M** mnemo/s	| **16M** mnemo/s | 700k entropy/s | **10M** entropy/s |
 | **RTX 4090** | **160M** mnemo/s | **38M** mnemo/s	| **11M** mnemo/s | 450k entropy/s | **6M** entropy/s |
 * The speed is indicated when checking 10 addresses in each phrase.
 * If you reduce the number of addresses checked, the speed will be higher.
