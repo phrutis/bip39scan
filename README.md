@@ -1,4 +1,4 @@
-# bip39scan - New reliase v 5.0.1 (15/08/2025) - ~~$500~~ -> $200
+# bip39scan - New reliase v 5.5.5 (05/09/2025) - ~~$500~~ -> $200
 ### 🚀 The fastest brute force mnemonics MultiGPU program in the world! 🚀<br>
 
 > [!IMPORTANT]
@@ -6,15 +6,15 @@
 > **All future updates and versions will have the same password.**
 
 > [!NOTE]
->  **v 5.0.1 New add:**
+>  **v 5.5.5 New add:**
 > 
-> **New mode - Brute force passwords from [bip32.org](http://bip32.org) (working for over 12 years)**
-> 1. Mode 10 BIP32 - Reading passwords from file ```--hmac pass.txt```
-> 2. Mode 10 BIP32 - Reading passwords stream from external generator ```--hmac stdin```
-> 3. Mode 10 BIP32 - Reading passwords from file ```--hmac1 pass.txt```
-> 4. Mode 10 BIP32 - Reading passwords stream from external generator ```--hmac1 stdin```
-> 5. Mode 10 BIP32 - Number of password iterations for hmac_sha256 ```--iterations 50000```
-> 6. Fixed -e mode (5, 6)
+> **Added multipath!**
+> Now you don't need to go through the same range several times with different pathes.
+> Create a text file list.txt write pathes on a new line m/...
+> Replace the ```-p m/...``` argument with ```--pp list.txt```
+> Multipath is very useful for mode 10 where there are 50k iterations.
+> Added 3 coins as on bip32.org 
+> Now you can search BCH, LTC, DOGE
 
 **MultiGPU program brute force mnemonic phrases**<br>
 Supports brute force 6, 9, 12, 15, 18, 21, 24 words<br>
@@ -499,6 +499,8 @@ m/0-9<br>
 m/0-1'/0-9<br>
 m/0-1'/0-3/0-9<br>
 
+Use multipatch ```--pp listpathes.txt```
+
  ## Reading passwords from file
 ```
 bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/0-9 --hmac1 passwords.txt --iterations 50000
@@ -770,6 +772,7 @@ OPTIONS:
                           The default is m/44'/0'/0-9'/0-1/0-9 for p2pkh addresses and ethereum,
                           m/49'/0'/0-9'/0-1/0-9 for p2sh addresses,
                           m/84'/0'/0-9'/0-1/0-9 for bech32 addresses.
+        --pp FILE         Read derivation paths from the file, one per line. -p and --pp are mutually exclusive.
     -v, --verbose         Print debug messages.
     -t, --type STR        Address type, one of P2SH, P2PKH_UNCOMPRESSED, P2PKH, bech32, ethereum
                           By default, address type is detected from the address file, if it's text.
