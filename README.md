@@ -9,12 +9,12 @@
 >  **v 5.5.5 New add:**
 > 
 > **Added multipath!**
-> Now you don't need to go through the same range several times with different pathes.
-> Create a text file list.txt write pathes on a new line m/...
-> Replace the ```-p m/...``` argument with ```--pp list.txt```
-> Multipath is very useful for mode 10 where there are 50k iterations.
-> Added 3 coins as on bip32.org 
-> Now you can search BCH, LTC, DOGE
+> 1. Now you don't need to go through the same range several times with different pathes.
+> 2. Create a text file list.txt write pathes on a new line m/...
+> 3. Replace the ```-p m/...``` argument with ```--pp list.txt```
+> 4. Multipath is very useful for mode 10 where there are 50k iterations.
+> 5. Added 3 coins as on bip32.org 
+> 6. Now you can search BCH, LTC, DOGE
 
 **MultiGPU program brute force mnemonic phrases**<br>
 Supports brute force 6, 9, 12, 15, 18, 21, 24 words<br>
