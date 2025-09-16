@@ -671,7 +671,8 @@ Your speed is 60k<br>
 
 There is no OpenCL on your PC!<br>
 Install the required library:<br>
-https://slproweb.com/download/Win64OpenSSL-3_0_17.msi
+https://slproweb.com/download/Win64OpenSSL-3_0_17.msi<br>
+https://aka.ms/vs/17/release/vc_redist.x64.exe
 <hr>
 
 
