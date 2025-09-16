@@ -667,6 +667,14 @@ It takes 1,000,000 passwords, makes iterations and does not check the seed until
 Your speed is 60k<br>
 1000000/60000 = it will take you 15 seconds to check<hr>
 
+**The program doesn't start for me and doesn't display bip39scan -h**
+
+There is no OpenCL on your PC!<br>
+Install the required library:<br>
+https://slproweb.com/download/Win64OpenSSL-3_0_17.msi
+<hr>
+
+
 **How to change the derivation in a patch?**
 
 You can set a non-standard patch derivation at your discretion:<br>
