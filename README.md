@@ -636,6 +636,11 @@ The program starts in 3-5 seconds, at a speed of 500k, it can go through your di
 I recommend using dictionaries from 5 million lines and more.<br>
 The program has 65536 threads, while 50 threads processed your list, other threads (65511 empty) without load finished the program earlier.<hr>
 
+**How to create your own address database?**
+
+Go to the section <b>Download ready-made address databases for bip39scan</b><br>
+This section contains ready-made databases. Below are instructions on how to create your own databases from addresses.<hr>
+
 **My random finds the same thing!?**
 
 In old versions of the program (v2.0.1, v3.2) with each new launch for random, <br>
