@@ -951,7 +951,9 @@ If you already have the precomp.bin, copy it to the build directory and comment 
 Save CMakeLists.txt and run cmake:
 $ ../cmake-3.28.0-linux-x86_64/bin/cmake ../bip39scan<br>
 
-where ../bip39scan is the source code directory<br>
+ex. cmake -S ./bip39scan -B ./bip39scan-build<br>
+
+where ../bip39scan-build is the source code directory<br>
 make the project<br>
 $ make bip39scan
 </details>
