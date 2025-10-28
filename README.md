@@ -1,26 +1,23 @@
-# bip39scan - New reliase v 5.5.5 (05/09/2025) - ~~$500~~ -> $200
+# bip39scan - New reliase v 7.7.7 (25/10/2025) - ~~$500~~ -> $200 t.me/cuda8
 ### 🚀 The fastest brute force mnemonics MultiGPU program in the world! 🚀<br>
 
 > [!IMPORTANT]
-> **Update! For those who bought versions 3.2, 4.0.1, the password is the same.**<br>
-> **All future updates and versions will have the same password.**
+> **Update! For those who bought versions 3.2, 4.0.1, 5.5.5 the password is the same.**<br>
+> **All future updates and versions will have the same password!**
 
 > [!NOTE]
->  **v 5.5.5 New add:**
+>  **v7.7.7 New add:**
 > 
-> **Added multipath!**
-> 1. Now you don't need to go through the same range several times with different pathes.
-> 2. Create a text file list.txt write pathes on a new line m/...
-> 3. Replace the ```-p m/...``` argument with ```--pp list.txt```
-> 4. Multipath is very useful for mode 10 where there are 50k iterations.
-> 5. Added 3 coins as on bip32.org 
-> 6. Now you can search BCH, LTC, DOGE
+> **Added HEX160!**
+> 1. Updated --core mode to accept passwords or hashes.
+> 2. Added support for RIPEMD160 hashes, now you can search for all types of coins at once.
+> 3. Types addresses search: P2PKH, P2PKH_UNCOMPRESSED, P2SH, P2PKH bc.., ethereum...
+> 4. Old databases alleth.bin, allbtc1, allbtc3, allbc, and others will be deleted.
 
 **MultiGPU program brute force mnemonic phrases**<br>
 Supports brute force 6, 9, 12, 15, 18, 21, 24 words<br>
 The program supports all CUDA cards GeForce (CMP, GTX, RTX...)<br>
-Supports all patches, ETH, BTC, DOGE, LITE, dash, BTC Cash, addresses and ETH tokens.<br>
-Automatically detects the coin type based on the given patch. You can specify the type manually.
+Supports multi patch and rmd160 hashes.
  
 | GPU card | 24 words | 18 words | 12 words | other brute | Mode 9 BIP32 |
 |----------|----------|----------|----------|-------------|--------------|
@@ -40,12 +37,9 @@ Automatically detects the coin type based on the given patch. You can specify th
 > The commands are the same as for Windows.<br>
 > You need to add in patch \ before '
 > ```chmod +x bip39scan```<br>
-> ```./bip39scan -a alleth.bin -t ethereum --bloom 2048M --save Found.txt -p m/44\'/60\'/0\'/0/0-9 ...```
+> ```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt ...```
 
 ## Modes:
-⬇️ Click to open section ⬇️
-<details>
-<summary><b>1. Sequential search words</b></summary>
 
 ## 1. Sequential search words:
 **Replace unknown words with** **\***<br>
@@ -53,91 +47,64 @@ Automatically detects the coin type based on the given patch. You can specify th
 For Linux (Ubuntu) "\*"<br> 
 
 ```
-bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH -p m/44'/0'/0'/0/0-9 uncover figure script * obscure waste metal quit depend bachelor trust erupt * impose brave leave number rapid oak wealth reopen * noodle tragic
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt uncover figure script * obscure waste metal quit depend bachelor trust erupt * impose brave leave number rapid oak wealth reopen * noodle tragic
 ```
 In the phrase, 3 missing words in different positions are replaced by * (test address 14aZB9i8NFiXpeGbS3g7vLArhL7EbNBSWS)
 
 [![Image](https://github.com/user-attachments/assets/0a4e85ae-166f-41ae-b406-16c736e38d17)](https://github.com/user-attachments/assets/e8d4535c-ea78-410f-8ec9-2608847ce975)
 
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 cause ensure shield option monkey infant tray okay remember * * *
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt cause ensure shield option monkey infant tray okay remember * * *
 ```
 ```
-bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 carpet * recycle force since * update glare seminar * worth answer
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt cause ensure shield option monkey infant tray okay remember * * *
 ```
-```
-bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 * ostrich * kitten * unit glow tortoise world crop kit curve
-```
-```
-bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 right elevator dust radio please prison cup omit require also decorate sock
-```
+
 You can use your own list of words from a text file for searching. Only words from the [2048 mnemonic words](https://github.com/phrutis/bip39scan/blob/main/bip39.txt) are supported.<br>
 Words in the file must be on a new line. To add a specified list, use ```-w words.txt``` Replace unknown words with *<br>
-</details>
-
-<details>
-<summary><b>2. Random search words</b></summary>
 
 ## 2. Random search words:
 ```
-bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH -p m/44'/0'/0'/0/0-9 -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic
 ```
+```
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic
+```
+
 https://github.com/user-attachments/assets/2d9d24c7-8844-4de4-9e5d-7eba976d021e
 
 **Replace unknown words with** **\***<br>
 **Standard random 2048 words in positions with** **\***<br>
 For Linux (Ubuntu) "\*"<br> 
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 -r cause * shield option monkey infant tray okay remember * * *
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r cause * shield option monkey infant tray okay remember * * *
 ```
 ```
-bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 -r carpet * recycle * since * update glare seminar * worth answer
+bip39scan.exe -a hex160.bin -t HEX --bloom 20482M --save Found.txt --pp pathslist.txt -r cause * shield option monkey infant tray okay remember * * *
 ```
-```
-bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 -r * ostrich * * * unit glow tortoise world crop kit curve
-```
-```
-bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 -r * * * * * prison cup omit require also decorate sock
-```
-
 
 **Random using your list of mnemonic words from the file words.txt**<br>
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 -w words.txt -r cause * shield option monkey infant tray okay remember * * *
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w words.txt -r cause * shield option monkey infant tray okay remember * * *
 ```
 ```
-bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 -w words.txt -r carpet * recycle * since * update glare seminar * worth answer
-```
-```
-bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 -w words.txt -r * ostrich * * * unit glow tortoise world crop kit curve
-```
-```
-bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 -w words.txt -r * * * * * prison cup omit require also decorate sock
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -w words.txt -r cause * shield option monkey infant tray okay remember * * *
 ```
 
 **For full random, add only stars**<br>
 **For older versions below 4.0.1 you need to specify seed!** <br>
 Read the question and answer at the bottom of the page<br>
 For Linux (Ubuntu) "\*"<br> 
-Ex. ./bip39scan -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44\'/60\'/0\'/0/0-2 -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"<br>
+Ex. ./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"<br>
+
 ![Image](https://github.com/user-attachments/assets/18393117-eaff-4a81-9eac-46d327207903)
 
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 -r * * * * * * * * * * * *
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *
 ```
 ```
-bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 -r * * * * * * * * * * * *
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *
 ```
-```
-bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 -r * * * * * * * * * * * *
-```
-```
-bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 -r * * * * * * * * * * * *
-```
-</details>
-
-<details>
-<summary><b>3. Reading phrases and passwords from a text file</b></summary>
 
 ## 3. Reading phrases and passwords from a text file:
 **The program reads everything from the file: phrases, passwords, passphrases, words, numbers...**<br>
@@ -146,42 +113,22 @@ There are many finds on them. Supports dictionaries up to 64 TB.
 https://github.com/user-attachments/assets/b981b17f-db42-41a7-adb8-3b6dc7d73803
 
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 -m dict.txt
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m dict.txt
 ```
 ```
-bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 -m dict.txt
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m dict.txt
 ```
-```
-bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 -m dict.txt
-```
-```
-bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 -m dict.txt
-```
-</details>
-
-<details>
-<summary><b>4. Reading phrases and passwords as a stream from an external generator</b></summary>
 
 ## 4. Reading phrases and passwords as a stream from an external generator
 
 https://github.com/user-attachments/assets/5d930d3d-4224-4316-8f8f-87a721e21ec8
 
 ```
-hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -m stdin -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9
+hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m stdin
 ```
 ```
-hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -m stdin -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9
+py generator.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m stdin
 ```
-```
-hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -m stdin -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9
-```
-```
-hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -m stdin -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9
-```
-</details>
-
-<details>
-<summary><b>5. Reading entropy from a text file</b></summary>
 
 ## 5. Reading entropy from a text file
 Entropy must be in hex format with a new line.<br>
@@ -206,21 +153,11 @@ If not specified, the default will be en<br>
 ```-l es-nfkd``` Spanish<br>
 
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 -e entropy.txt
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e entropy.txt
 ```
 ```
-bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 -e entropy.txt
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e entropy.txt
 ```
-```
-bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 -e entropy.txt
-```
-```
-bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 -e entropy.txt
-```
-</details>
-
-<details>
-<summary><b>6. Reading entropy stream from external generator</b></summary>
 
 ## 6. Reading entropy stream from external generator
 Now you don't need to modify the program for the next vulnerability.<br>
@@ -251,21 +188,11 @@ If not specified, the default will be en<br>
 https://github.com/user-attachments/assets/df8a0774-307a-46e0-ac01-b9123aad5c50
 
 ```
-py 128bit.py | bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 -e stdin
+py entropy.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e stdin
 ```
 ```
-py entropy.py | bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 -e stdin
+py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e stdin
 ```
-```
-py md5.py | bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 -e stdin
-```
-```
-py 256.py | bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 -e stdin
-```
-</details>
-
-<details>
-<summary><b>7. Use the built-in generator passwords</b></summary>
 
 ## 7. Use the built-in generator passwords
 In 2015-2016, there was an online service live.ether where everyone could generate addresses using passwords.<br>
@@ -281,16 +208,10 @@ The generator works with an increment increasing the password length.
 https://github.com/user-attachments/assets/d0fc2faa-b0bb-4f7b-8c4e-575972a0cb26
 
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 --alphabet alpha.txt --start a
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --alphabet alpha.txt --start a
 ```
 ```
-bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 --alphabet alpha.txt --start a
-```
-```
-bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 --alphabet alpha.txt --start a
-```
-```
-bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 --alphabet alpha.txt --start a
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --alphabet alpha.txt --start a
 ```
 
 https://github.com/user-attachments/assets/313156e0-d82e-499d-a5c0-644e067d76cd
@@ -300,10 +221,7 @@ To continue, copy the position from status.txt and run --start FromHire1<br>
 If there is a space in the start word, run it like this --start "From Hire 1"<br>
 > [!IMPORTANT]
 > Important! The symbols from the starting position must be present in the alphabet.
-</details>
 
-<details>
-<summary><b>8. Vulnerable generator libbitcoin explorer v3.2 (Milk sad vulnerability)</b></summary>
 
 ## 8. Vulnerable generator libbitcoin explorer v3.2
 More about the vulnerability Milk Sad:<br>
@@ -339,7 +257,7 @@ it will generate "milk sad ..." mnemonic<br>
 <img width="977" height="511" alt="Image" src="https://github.com/user-attachments/assets/c38e79c6-08de-4b5c-8d85-f01f06bf7bba" /><br>
 
 **Every 5 minutes the depth position is saved to the file checkpoint.txt**<br>
-**To continue, use the argument ```--depth 123``` (value from the file)**
+**To continue, use the argument ```--depth 123``` (value from the file checkpoint.txt)**
 
 ### Length of phrases
 ```--bits 64``` (random phrase 6 words)<br>
@@ -351,17 +269,12 @@ it will generate "milk sad ..." mnemonic<br>
 ```--bits 256``` (random phrase 24 words)<br>
 
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 --bits 192
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 256
 ```
 ```
-bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 --bits 256
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --bits 128
 ```
-```
-bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 --bits 224
-```
-```
-bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 --bits 128
-```
+
 #### Phrase Languages
 If not specified, the default will be en<br>
 ```-l en``` English<br>
@@ -386,21 +299,11 @@ If not specified, the default will be en<br>
 <img width="976" height="370" alt="Image" src="https://github.com/user-attachments/assets/e787746a-1646-428c-9865-d62ff85baf66" />
 
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 --bits 192 -l tu
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 192 -l tu
 ```
 ```
-bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 --bits 256 -l it
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --bits 256 -l it
 ```
-```
-bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 --bits 224 -l zh_Hans
-```
-```
-bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 --bits 128 -l fr
-```
-</details>
-
-<details>
-<summary><b>9. BIP32 Reading from file and external generator</b></summary>
 
 ## 9. BIP32
 This mode uses hmac_sha512 + salt "Bitcoin seed"<br>
@@ -430,37 +333,19 @@ m/0'/0'/0-5'<br>
  ## Reading entropy from file
 
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH_UNCOMPRESSED --bloom 2048M --save Found.txt -p m/0/0-5 --core entropy.txt
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --core entropy.txt
+```
+```
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --core entropy.txt
 ```
 
-```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 --core entropy.txt
-```
-```
-bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 --core entropy.txt
-```
-```
-bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 --core entropy.txt
-```
-```
-bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 --core entropy.txt
-```
 
  ## Receiving entropy from an external generator
 ```
-py gen.py | bip39scan.exe -a allbtc1.bin -t P2PKH_UNCOMPRESSED --bloom 2048M --save Found.txt -p m/0/0-5 --core stdin
+py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --core stdin
 ```
 ```
-py gen.py | bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/44'/0'/0'/0/0-9 --core stdin
-```
-```
-py gen.py | bip39scan.exe -a allbtc3.bin -t P2SH --bloom 2048M --save Found.txt -p m/49'/0'/0'/0/0-9 --core stdin
-```
-```
-py gen.py | bip39scan.exe -a allbc.bin -t bech32 --bloom 2048M --save Found.txt -p m/84'/0'/0'/0/0-9 --core stdin
-```
-```
-py gen.py | bip39scan.exe -a alleth.bin -t ethereum --bloom 4096M --save Found.txt -p m/44'/60'/0'/0/0-9 --core stdin
+py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --core stdin
 ```
 
 Example founds:
@@ -470,10 +355,7 @@ Example founds:
 | L4qs8CTqn4ZY1gJfEgPc1vFpAQNx8wNuF5o9dbM2HhtWnZQKg7an | 1EnXumNo7pyybB9Ntmfsa6S5WbAjsiwLkp | m/3 | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | L5LxK8WV9wNDemaYBtpEURWi3sHmGsEHpSGmSfahQrreTYKukp9W | 12CL4K2eVqj7hQTix7dM7CVHCkpP17Pry3 | m/0/0 | 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f |
 | KxtynmemHgVetU7rp5MsqSnQ6rvpF7My8DH94Cs7bTH9hwTNn3WL | 15MbJzwHGPq5ETKLBp3yPHoxQ5GUB9avyS | m/0/9 | 000102030405060708090a0b0c0d0e0f0f0e0d0c0b0a09080706050403020100 |
-</details>
 
-<details>
-<summary><b>10. BIP32 Brute bip32.org passwords</b></summary>
 
 ## 10. BIP32 Brute bip32.org passwords
 
@@ -503,18 +385,18 @@ Use multipatch ```--pp listpathes.txt```
 
  ## Reading passwords from file
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/0-9 --hmac1 passwords.txt --iterations 50000
+bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --hmac1 passwords.txt --iterations 50000
 ```
 ```
-bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/0-1'/0-9 --hmac1 passwords.txt --iterations 50000
+bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --hmac1 passwords.txt --iterations 50000
 ```
 
  ## Receiving passwords from an external generator
 ```
-py gen.py | bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/0-9 --hmac1 stdin --iterations 50000
+py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --hmac1 stdin --iterations 50000
 ```
 ```
-py gen.py | bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt -p m/0-1'/0-9 --hmac1 stdin --iterations 50000
+py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --hmac1 stdin --iterations 50000
 ```
 
 **Example FOUNDS:**
@@ -530,15 +412,17 @@ py gen.py | bip39scan.exe -a allbtc1.bin -t P2PKH --bloom 2048M --save Found.txt
 | KzTk56rMTNfXybLNij6g1mVbGkfjK2k8AcfoxSfaRWvAmNjPZYDL | 14SSV31RNNYaDcjw5JB5oHPq6jyg9ssc9H | m/0'/0/8 | password |
 | L1TeQekx21Ma8p1w8J46dBMgzWiVzANGSip9sxtBHSBuzxYBSykD | 1782pxsaZczh7tdgjujZVuhB7Dj5z12GdA | m/0'/0/9 | password |
 
-</details>
 
 
 ## Other sections:
 
-<details>
-<summary><b>Download ready-made address databases for bip39scan</b></summary>
-
 # Download ready-made address databases for bip39scan
+
+**ALL ETH + ALL TOKENS + ALL BTC = 2.775.909.490 addresses**<br>
+**Doesn't start on 12 GB cards!!! The database fits on a 16 GB card or more!!!** <br>
+**To run you need 52 GB of RAM** <br>
+Add these arguments to run ```--bloom 8192M -t HEX```<br>
+Download http://95.215.108.160/up/allcoins.bin  **53 GB**
 
 **ALL ETH 1458757703 addresses with balance 09/07/2025** + empty + ALL ETH TOKENS with balance 09/07/2025 + empty history:<br>
 ARBITRUM, AVALANCHE, BASE, BNB, BSC, BTT, CRONOS, CELO, ETC, Ethereumnie, ERA, ERC20, ETH, Ethered, FANTOM, <br>
@@ -560,10 +444,11 @@ Download http://95.215.108.160/up/allbtc3.bin  **7.6 GB**
 Add these arguments to run ```--bloom 2048M -t bech32```<br>
 Download http://95.215.108.160/up/allbc.bin  **6.5 GB**
 
-**List OTHESR Databases .bin**<br>
-see http://95.215.108.160/up/
-
 ## Addresses only with positive balance
+
+Download ETH + BTC 1.., 3.., bc...<br>
+```-t HEX --bloom 2048M```<br>
+http://95.215.108.160/up/hex160.bin  **3.6 GB**
 
 Download ETH addresses 0x + tokens 02/07/2025<br>
 ```-t ethereum --bloom 2048M```<br>
@@ -602,18 +487,28 @@ Create and use binary databases.<br>
 The program will start in seconds<br>
 Create databases:<br>
 BTC<br>
-```bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH --save-bin btc1.bin -p m/44'/0'/0'/0/0-9 --bits 256```<br>
-```bip39scan.exe --save Found.txt -a btc3.txt -t P2SH --save-bin btc3.bin -p m/49'/0'/0'/0/0-9 --bits 256```<br>
-```bip39scan.exe --save Found.txt -a btc-bc.txt -t bech32 --save-bin bc.bin -p m/84'/0'/0'/0/0-9 --bits 256```
+```bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH --save-bin btc1.bin --bloom 2048M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a btc3.txt -t P2SH --save-bin btc3.bin --bloom 2048M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a btc-bc.txt -t bech32 --save-bin bc.bin --bloom 2048M --pp pathslist.txt --bits 256```
 
 ETH and tokens<br>
-```bip39scan.exe --save Found.txt -a eth_addresses.txt --save-bin eth.bin -t ethereum -p m/44'/60'/0'/0/0-9 --bits 256```
+```bip39scan.exe --save Found.txt -a eth_addresses.txt --save-bin eth.bin -t ethereum --bloom 4096M --pp pathslist.txt --bits 256```
+
+HEX base 160<br>
+Hashes160 must be on a new line in text format!<br>
+```bip39scan.exe -a hashes160.txt -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --save-bin new_hex160.bin --bits 256```<br>
+Text file more 12 GB USE --bloom 2048M<br>
+Text file more 50 GB USE --bloom 4096M<br>
+Text file more 120 GB USE --bloom 8192M<br>
 
 **Next launches run like this!** <br>
-```bip39scan.exe --save Found.txt -a btc1.bin -t P2PKH -p m/44'/0'/0'/0/0-9 --bits 256```<br>
-```bip39scan.exe --save Found.txt -a btc3.bin -t P2SH -p m/49'/0'/0'/0/0-9 --bits 256```<br>
-```bip39scan.exe --save Found.txt -a bc.bin -t bech32 -p m/84'/0'/0'/0/0-9 --bits 256```<br>
-```bip39scan.exe --save Found.txt -a alleth.bin --bloom 4096M -t ethereum -p m/44'/60'/0'/0/0-9 --bits 256```
+```bip39scan.exe --save Found.txt -a allcoins.bin -t HEX --bloom 8192M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a hex160.bin -t HEX --bloom 2048M --pp pathslist.txt --bits 256```<br>
+
+```bip39scan.exe --save Found.txt -a btc1.bin -t P2PKH --bloom 2048M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a btc3.bin -t P2SH --bloom 2048M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a bc.bin -t bech32 --bloom 2048M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a alleth.bin --bloom 4096M -t ethereum --pp pathslist.txt --bits 256```
 
 
 Where can I download a fresh database of addresses?<br>
@@ -623,11 +518,7 @@ https://routescan.io/dumps?page=2&nexttoken=undefined<br>
 Each address must be on a new line.<br>
 Ethereum addresses must be 0x...<br>
 Bitcoin addresses 1.., 3.., bc.. (New long addresses bc.. does not accept)
-</details>
 
-<details>
-<summary><b>FAQ question-answer</b></summary>
- 
 # FAQ
 **The program did not find my test password from the file.**
 
@@ -680,6 +571,27 @@ https://slproweb.com/download/Win64OpenSSL-3_0_17.msi<br>
 https://aka.ms/vs/17/release/vc_redist.x64.exe
 <hr>
 
+**How to check the found HEX160?**
+
+Example founds:<br>
+c0a95cc48dcfb76f02edf0ff020f8ccc44da576d(ethereum) -> 0xc0a95cc48dcfb76f02edf0ff020f8ccc44da576d<br>
+For BTC:<br>
+aa6b6bdfc262fe316db3c83aec84177b750d985a(P2PKH_UNCOMPRESSED)
+aa6b6bdfc262fe316db3c83aec84177b750d985a(P2PKH) - Address 1.. or see path if m/84.. bc..<br>
+71fc5be17c98a1e6018be06d1dfe8f41eafee51e(P2SH)<br>
+Use a quick script to generate addresses from private keys<br>
+```py 160.py```<br>
+Paste the found private key
+<hr>
+
+**How do I convert my addresses to 160 hashes?**
+
+Use Python addto160.py<br>
+Incoming address file - adr.txt<br>
+Outgoing file - hex160out.txt<br>
+Supports BTC addresses 1.., 3.., bc..<br>
+For ETH addresses and tokens, remove the 0x
+<hr>
 
 **How to change the derivation in a patch?**
 
@@ -697,6 +609,17 @@ m/44'/0-4294967296'/0-4294967296'/0-2147483647/0-2147483647<hr>
 **Tell me patches of different coins**
 
 [**Full list of patches BIP32, BIP39**](https://github.com/phrutis/bip39scan/blob/main/Patches.md)<hr>
+
+**How to create a patch file?**
+
+Create a text file and rename it, for example, to pathes.txt<br>
+Insert the list of required paths on a new line.<br>
+m/44'/60'/0'/0/0-9<br>
+m/44'/0'/0'/0-1/0-9<br>
+m/49'/0'/0'/0/0-9<br>
+m/84'/0'/0'/0/0-9<br>
+USE ```--pp pathes.txt```
+<hr>
 
 **Why do we need streams, generators?**<br>
 **How does it work? Show an example.**
@@ -765,32 +688,36 @@ If you do everything correctly, you will find test addresses<hr>
 When you search with binary database the program does not know what coin you are looking for.<br>
 BE SURE TO SPECIFY - t typecoin
 <hr>
-</details>
 
-<details>
-<summary><b>bip39scan.exe -h (help page)</b></summary>
- 
 ## bip39scan.exe -h
 ```
-C:\Users\User\Downloads\bip39scan-win64>bip39scan -h
-bip39scan v 5.0.1 (phrutis modification 15/08/2025)
+C:\Users\User\Desktop\777\Release>bip39scan.exe -h
+bip39scan v7.7.7 (phrutis modification 25/10/2025) t.me/cuda8
 Bruteforce bip39 mnemonics
 Syntax: bip39scan [OPTIONS] [MNEMO]
 OPTIONS:
     -h, --help            Print this message.
-    -a, --addresses STR   The name of the address list, each address of a separate line, or a binary
+    -a, --addresses STR   The name of the address file, each address of a separate line, or a binary
                           file previosly created with --save-bin. Binary files are faster to read.
         --save-bin STR    The name of the binary file to write, 20 bytes per address. This is in order
                           to accelerate loading of addresses.
     -p, --path STR        Use this derivation path template, e.g. m/44'/60'/0-99'/0/0-99
-                          The default is m/44'/0'/0-9'/0-1/0-9 for p2pkh addresses and ethereum,
-                          m/49'/0'/0-9'/0-1/0-9 for p2sh addresses,
-                          m/84'/0'/0-9'/0-1/0-9 for bech32 addresses.
+                          The default is m/44'/coin'/0-9'/0-1/0-9 for p2pkh addresses and ethereum,
+                          m/49'/coin'/0-9'/0-1/0-9 for p2sh addresses,
+                          m/84'/coin'/0-9'/0-1/0-9 for bech32 addresses.
         --pp FILE         Read derivation paths from the file, one per line. -p and --pp are mutually exclusive.
     -v, --verbose         Print debug messages.
     -t, --type STR        Address type, one of P2SH, P2PKH_UNCOMPRESSED, P2PKH, bech32, ethereum
                           By default, address type is detected from the address file, if it's text.
                           This options is required when using binary data.
+        --tt STR,STR,...  Comma-separated list of address types to search for in the -t HEX mode.
+                          When -t HEX, the address file contains hexadecimal 160-bit hashes instead of addresses.
+                          Possible values are:
+                              P2PKH: rmd160(sha256(der-encoded compressed pubkey))
+                              P2PKH_UNCOMPRESSED: rmd160(sha256(der-encoded uncompressed pubkey))
+                              P2SH: rmd160(sha256(\x00\x14 . rmd160(sha256(der-encoded compressed pubkey))))
+                              ETHEREUM: keccak(64-byte pubkey, x.y in big-endian), used also by Tron.
+                          Default: check all hash functions.
     -S, --save FILE       Save found results to the file.
     -m, --mnemo FILE      Read mnemonics from the file, one per line. -m stdin to read from the input pipe.
         --alphabet FILE   Generate mnemonics as passwords from the characters of the given file.
@@ -813,12 +740,13 @@ OPTIONS:
     -w, --words FILE      Use custom dictionary for '*' placeholders in the mnemo template; each word in a separate text line.
                           Each word should be a valid BIP39 word in the specified language (--lang).
         --dump            Dumps valid mnemonics.
-        --core            BIP32 reading from file and receiving stream from external generator.
+    -r, --random          Randomize the mnemonics generated with MNEMO templates (see below).
+        --depth NUM       Depth of the random generator to start with. Default is 0 - start generating entoropy right after
+                          the random generator is initialized.
+        --core FILE       Read BIP39 seed from the file, one per line. If FILE is 'stdin', read from input pipe.
         --hmac FILE       Read passwords from the file, one per line, and use them as HMAC keys to generate BIP39 seeds.
         --hmac1 FILE      Same as --hmac but doesn't check intermediate iterations.
         --iterations NUM  In the --hmac mode: number of hmac iterations to perform.
-        --depth           Starting range of generator initialization depth
-    -r, --random          Randomize the mnemonics generated with MNEMO templates (see below).
     MNEMO                 Mnemonic template, up to 24 words. Can contain placeholders '*'. If less than
                           12 words, the rest are placeholders. Each '*' is replaced with one of 2048 words (or one of the words
                           from the dictionary specified with --words option).
@@ -827,10 +755,6 @@ Example:
    > bip39scan -a addresses.txt -p m/0'/0-1 -m mnemo.txt
    > bip39scan -a addresses.txt -p m/0'/0-1 --alphabet characters.txt --start kaaaaaaa
 ```
-</details>
-
-<details>
-<summary><b>Building on Windows Visual Studio 2022</b></summary>
  
 ## Building on Windows VS-2022
 Install cmake 3.30+ from this link: https://github.com/Kitware/CMake/releases/download/v3.31.8/cmake-3.31.8-windows-x86_64.msi<br>
@@ -870,11 +794,7 @@ The executable builds in the your-build-directory\Release
 <img width="1303" height="1039" alt="Image" src="https://github.com/user-attachments/assets/b2dcf48f-37e4-4e8d-89f6-f9892f571bc9" />
 
 If necessary run precomp.exe file precomp.bin will be generated
-</details>
 
-<details>
-<summary><b>Building on Ubuntu</b></summary>
- 
 ## Building on Ubuntu:
 
 Below is detailed instruction with bash commands required to build bip39scan.<br>
@@ -956,4 +876,4 @@ ex. cmake -S ./bip39scan -B ./bip39scan-build<br>
 where ../bip39scan-build is the source code directory<br>
 make the project<br>
 $ make bip39scan
-</details>
+
