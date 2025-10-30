@@ -26,6 +26,7 @@ Supports multi patch and rmd160 hashes.
 * The speed is indicated when checking 10 addresses in each phrase.
 * If you reduce the number of addresses checked, the speed will be higher.
 * The size of the address base does not affect the speed +-5%
+* v7.7.7 mode 1, vode 2 - Shows speed incorrectly, this does not affect functionality.
 
 > [!TIP]
 > **The program is sold with the source code! [cmake Visual Studio 2022](https://github.com/phrutis/bip39scan/edit/main/README.md#building-on-windows-vs-2022) or [Linux](https://github.com/phrutis/bip39scan/edit/main/README.md#building-on-ubuntu)**<br>
