@@ -419,11 +419,15 @@ py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.t
 
 # Download ready-made address databases for bip39scan
 
-**ALL ETH + ALL TOKENS + ALL BTC = 2.775.909.490 addresses**<br>
+**ALL ETH + ALL TOKENS + ALL BTC + history = 2.775.909.490 addresses**<br>
 **Doesn't start on 12 GB cards!!! The database fits on a 16 GB card or more!!!** <br>
 **To run you need 52 GB of RAM** <br>
 Add these arguments to run ```--bloom 8192M -t HEX```<br>
 Download http://95.215.108.160/up/allcoins.bin  **53 GB**
+
+**TRON TRX + history = 150M**<br>
+Add these arguments to run ```--bloom 2048M -t HEX```<br>
+Download http://95.215.108.160/up/tron.bin  **3 GB**
 
 **ALL ETH 1458757703 addresses with balance 09/07/2025** + empty + ALL ETH TOKENS with balance 09/07/2025 + empty history:<br>
 ARBITRUM, AVALANCHE, BASE, BNB, BSC, BTT, CRONOS, CELO, ETC, Ethereumnie, ERA, ERC20, ETH, Ethered, FANTOM, <br>
