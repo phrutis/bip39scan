@@ -451,13 +451,9 @@ Download http://95.215.108.160/up/allbc.bin  **6.5 GB**
 
 ## Addresses only with positive balance
 
-Download ETH + BTC 1.., 3.., bc...<br>
-```-t HEX --bloom 2048M```<br>
-http://95.215.108.160/up/hex160.bin  **3.6 GB**
-
-Download ETH addresses 0x + tokens 02/07/2025<br>
-```-t ethereum --bloom 2048M```<br>
-http://95.215.108.160/up/eth.bin  **6.9 GB**
+Download ETH + BTC 1.., 3.., bc... from $1<br>
+```-a hex160.bin -t HEX```<br>
+http://95.215.108.160/up/hex160.bin  **2.6 GB**
 
 Download BTC addresses 1... 30/06/2025<br>
 http://95.215.108.160/up/btc1.txt  **787 MB**
