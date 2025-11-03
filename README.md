@@ -44,7 +44,7 @@ Supports multi patch and rmd160 hashes.
 ## 1. Sequential search words:
 **Replace unknown words with** **\***<br>
 **Standard random 2048 words in positions with** **\***<br>
-For Linux (Ubuntu) "\*"<br> 
+**For Linux (Ubuntu) "\*" words "\*" "\*" zoo "\*"** <br> 
 
 ```
 bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt uncover figure script * obscure waste metal quit depend bachelor trust erupt * impose brave leave number rapid oak wealth reopen * noodle tragic
@@ -75,7 +75,7 @@ https://github.com/user-attachments/assets/2d9d24c7-8844-4de4-9e5d-7eba976d021e
 
 **Replace unknown words with** **\***<br>
 **Standard random 2048 words in positions with** **\***<br>
-For Linux (Ubuntu) "\*"<br> 
+**For Linux (Ubuntu) -r "\*" word "\*" zoo** <br>  
 ```
 bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r cause * shield option monkey infant tray okay remember * * *
 ```
@@ -94,7 +94,7 @@ bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist
 **For full random, add only stars**<br>
 **For older versions below 4.0.1 you need to specify seed!** <br>
 Read the question and answer at the bottom of the page<br>
-For Linux (Ubuntu) "\*"<br> 
+**For Linux (Ubuntu) -r "\*" "\*" "\*" "\*"** <br>
 Ex. ./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"<br>
 
 ![Image](https://github.com/user-attachments/assets/18393117-eaff-4a81-9eac-46d327207903)
