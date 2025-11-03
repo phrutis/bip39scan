@@ -569,7 +569,7 @@ aa6b6bdfc262fe316db3c83aec84177b750d985a(P2PKH_UNCOMPRESSED)
 aa6b6bdfc262fe316db3c83aec84177b750d985a(P2PKH) - Address 1.. or see path if m/84.. bc..<br>
 71fc5be17c98a1e6018be06d1dfe8f41eafee51e(P2SH)<br>
 Use a quick script to generate addresses from private keys<br>
-```py 160.py```<br>
+```py gen_address.py``` or ```python3 gen_address.py```<br>
 Paste the found private key
 <hr>
 
