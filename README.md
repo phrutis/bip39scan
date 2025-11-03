@@ -676,7 +676,19 @@ If you do everything correctly, you will find test addresses<hr>
 
 When you search with binary database the program does not know what coin you are looking for.<br>
 BE SURE TO SPECIFY - t typecoin
+Use a specific type: P2SH, P2PKH_UNCOMPRESSED, P2PKH, bech32, ethereum<br>
+Or use the HEX type for all coin types
 <hr>
+
+**What does -t HEX look for?**
+
+By specifying this type, you are searching for 5 types of coins at once.<br>
+BTC P2PKH<br>
+BTC P2PKH_Uncompressed<br>
+BTC P2SH<br>
+BTC Bech32 p2pkh<br>
+ETH<br>
+The program searches for 160 hashes from addresses, you can add 160 hashes from other coins.<hr>
 
 ## bip39scan.exe -h
 ```
