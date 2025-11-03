@@ -463,11 +463,6 @@ http://95.215.108.160/up/btc3.txt **240 MB**
 Download BTC addresses bc... 30/06/2025<br>
 http://95.215.108.160/up/bc.txt **842 MB**
 
-Purchased ETH bases and tokens.<br>
-The base was provided by the hunter.<br>
-```-t ethereum --bloom 2048M```<br>
-http://95.215.108.160/up/eth_parse.bin  **10.1 GB**
-
 I recommend using large address bases.<br>
 For example, BCH may remain on the historical address 1... (P2PKH)
 
