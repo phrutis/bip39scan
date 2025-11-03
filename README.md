@@ -92,7 +92,6 @@ bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist
 ```
 
 **For full random, add only stars**<br>
-**For older versions below 4.0.1 you need to specify seed!** <br>
 Read the question and answer at the bottom of the page<br>
 **For Linux (Ubuntu) -r "\*" "\*" "\*" "\*"** <br>
 Ex. ./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"<br>
