@@ -12,7 +12,6 @@
 > 1. Updated --core mode to accept passwords or hashes.
 > 2. Added support for RIPEMD160 hashes, now you can search for all types of coins at once.
 > 3. Types addresses search: P2PKH, P2PKH_UNCOMPRESSED, P2SH, P2PKH bc.., ethereum...
-> 4. Old databases alleth.bin, allbtc1, allbtc3, allbc, and others will be deleted.
 
 **MultiGPU program brute force mnemonic phrases**<br>
 Supports brute force 6, 9, 12, 15, 18, 21, 24 words<br>
