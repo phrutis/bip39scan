@@ -414,9 +414,9 @@ py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.t
 
 
 
-## Other sections:
+# Other sections:
 
-# Download ready-made address databases for bip39scan
+## Download ready-made address databases for bip39scan
 
 **ALL ETH + ALL TOKENS + ALL BTC + history = 2.775.909.490 addresses**<br>
 **Doesn't start on 12 GB cards!!! The database fits on a 16 GB card or more!!!** <br>
