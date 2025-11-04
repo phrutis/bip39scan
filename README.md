@@ -1,4 +1,4 @@
-# bip39scan - New reliase v 7.7.7 (25/10/2025) - ~~$500~~ -> $200 t.me/cuda8
+# bip39scan - New reliase v 7.7.7 (04/11/2025) - ~~$500~~ -> $300 t.me/cuda8
 ### 🚀 The fastest brute force mnemonics MultiGPU program in the world! 🚀<br>
 
 > [!IMPORTANT]
@@ -8,10 +8,13 @@
 > [!NOTE]
 >  **v7.7.7 New add:**
 > 
-> **Added HEX160!**
-> 1. Updated --core mode to accept passwords or hashes.
-> 2. Added support for RIPEMD160 hashes, now you can search for all types of coins at once.
-> 3. Types addresses search: P2PKH, P2PKH_UNCOMPRESSED, P2SH, P2PKH bc.., ethereum...
+> **MODE 11 and HEX160!**
+> 1. Mode 11 - brute-force seed phrase passwords
+> 2. Updated --core mode to accept passwords or hashes.
+> 3. Added support for RIPEMD160 hashes, now you can search for all types of coins at once.
+> 4. Types addresses search: P2PKH, P2PKH_UNCOMPRESSED, P2SH, P2PKH bc.., ethereum...
+> 5. Fixed display of speed in mode 1 and 2.
+
 
 **MultiGPU program brute force mnemonic phrases**<br>
 Supports brute force 6, 9, 12, 15, 18, 21, 24 words<br>
@@ -25,7 +28,6 @@ Supports multi patch and rmd160 hashes.
 * The speed is indicated when checking 10 addresses in each phrase.
 * If you reduce the number of addresses checked, the speed will be higher.
 * The size of the address base does not affect the speed +-5%
-* v7.7.7 mode 1, vode 2 - Shows speed incorrectly, this does not affect functionality.
 
 > [!TIP]
 > **The program is sold with the source code! [cmake Visual Studio 2022](https://github.com/phrutis/bip39scan/edit/main/README.md#building-on-windows-vs-2022) or [Linux](https://github.com/phrutis/bip39scan/edit/main/README.md#building-on-ubuntu)**<br>
@@ -41,7 +43,7 @@ Supports multi patch and rmd160 hashes.
 
 ## Modes:
 
-## 1. Sequential search words:
+# 1. Sequential search words:
 **Replace unknown words with** **\***<br>
 **Standard random 2048 words in positions with** **\***<br>
 **For Linux (Ubuntu) "\*" words "\*" "\*" zoo "\*"** <br> 
@@ -63,7 +65,7 @@ bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist
 You can use your own list of words from a text file for searching. Only words from the [2048 mnemonic words](https://github.com/phrutis/bip39scan/blob/main/bip39.txt) are supported.<br>
 Words in the file must be on a new line. To add a specified list, use ```-w words.txt``` Replace unknown words with *<br>
 
-## 2. Random search words:
+# 2. Random search words:
 ```
 bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic
 ```
@@ -105,7 +107,7 @@ bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathsli
 bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *
 ```
 
-## 3. Reading phrases and passwords from a text file:
+# 3. Reading phrases and passwords from a text file:
 **The program reads everything from the file: phrases, passwords, passphrases, words, numbers...**<br>
 There are many finds on them. Supports dictionaries up to 64 TB.
 
@@ -118,7 +120,7 @@ bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathsli
 bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m dict.txt
 ```
 
-## 4. Reading phrases and passwords as a stream from an external generator
+# 4. Reading phrases and passwords as a stream from an external generator
 
 https://github.com/user-attachments/assets/5d930d3d-4224-4316-8f8f-87a721e21ec8
 
@@ -129,7 +131,7 @@ hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -a allcoins.b
 py generator.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m stdin
 ```
 
-## 5. Reading entropy from a text file
+# 5. Reading entropy from a text file
 Entropy must be in hex format with a new line.<br>
 Depending on the length of the hash, a phrase is created.
 #### Phrase Languages
@@ -158,7 +160,7 @@ bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathsli
 bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e entropy.txt
 ```
 
-## 6. Reading entropy stream from external generator
+# 6. Reading entropy stream from external generator
 Now you don't need to modify the program for the next vulnerability.<br>
 Create your own generators based on Python or C++ code.<br>
 There are many vulnerable random generators on the Internet (github).<br>
@@ -193,7 +195,7 @@ py entropy.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.
 py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e stdin
 ```
 
-## 7. Use the built-in generator passwords
+# 7. Use the built-in generator passwords
 In 2015-2016, there was an online service live.ether where everyone could generate addresses using passwords.<br>
 At first https://live.ether.camp they generated from camp 2031 iteration of SHA-3 (Keccak)<br>
 then switched to a more secure generation of pbkdf2_hmac_sha512 2048 iterations.<br>
@@ -221,8 +223,7 @@ If there is a space in the start word, run it like this --start "From Hire 1"<br
 > [!IMPORTANT]
 > Important! The symbols from the starting position must be present in the alphabet.
 
-
-## 8. Vulnerable generator libbitcoin explorer v3.2
+# 8. Vulnerable generator libbitcoin explorer v3.2
 More about the vulnerability Milk Sad:<br>
 RU https://habr.com/ru/articles/771980/<br>
 EN https://milksad.info<br>
@@ -304,7 +305,7 @@ bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathsli
 bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --bits 256 -l it
 ```
 
-## 9. BIP32
+# 9. BIP32
 This mode uses hmac_sha512 + salt "Bitcoin seed"<br>
 Designed to search for old Bitcoin core and other old BIP32 wallets.<br>
 [You can make a seed generator](https://github.com/hackerschoice/thc-btc-rng-bruteforce) based on the [old and vulnerable openssl-0.9.8c library](https://openssl-library.org/source/old/0.9.x/)<br>
@@ -356,7 +357,7 @@ Example founds:
 | KxtynmemHgVetU7rp5MsqSnQ6rvpF7My8DH94Cs7bTH9hwTNn3WL | 15MbJzwHGPq5ETKLBp3yPHoxQ5GUB9avyS | m/0/9 | 000102030405060708090a0b0c0d0e0f0f0e0d0c0b0a09080706050403020100 |
 
 
-## 10. BIP32 Brute bip32.org passwords
+# 10. BIP32 Brute bip32.org passwords
 
 The bip32.org website has been generating Bitcoin addresses from passwords for over 12 years.<br>
 Protection against password brute-force is implemented in the form of 50,000 iterations of the hmac_sha256 password.<br>
@@ -411,7 +412,40 @@ py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.t
 | KzTk56rMTNfXybLNij6g1mVbGkfjK2k8AcfoxSfaRWvAmNjPZYDL | 14SSV31RNNYaDcjw5JB5oHPq6jyg9ssc9H | m/0'/0/8 | password |
 | L1TeQekx21Ma8p1w8J46dBMgzWiVzANGSip9sxtBHSBuzxYBSykD | 1782pxsaZczh7tdgjujZVuhB7Dj5z12GdA | m/0'/0/9 | password |
 
+# 11. Search for Passphrases to Seed Phrases
+<img width="1251" height="983" alt="Image" src="https://github.com/user-attachments/assets/7c091ae2-24a8-4833-a549-300fc6f3f433" /><br>
+This mode checks the specified list of passphrases (passwords) for each phrase.<br>
+Argument --pass dict.txt (passwords on a new line)<br>
+Some call this the 13th, 25th word.<br>
+In fact, the password is appended to the "mnemonic" salt.<br>
 
+### Passphrases search supports the following modes:<br>
+
+Mode 3 - Reading seed phrases from a text file (Many finds)<br>
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m phrases.txt --pass passwords.txt```
+
+Mode 4 - Reading phrases as a stream from an external generator<br>
+```py gen_phrases.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m stdin --pass passwords.txt```
+
+Mode 5 - Reading entropy from a text file<br>
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e entropy.txt --pass passwords.txt```
+
+Mode 6 - Reading entropy stream from external generator<br>
+```py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e stdin --pass passwords.txt```
+
+Mode 8 - Vulnerable generator libbitcoin explorer v3.2<br>
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 256 --pass passwords.txt```
+
+**Example FOUNDS:**
+
+| SEED phrase | Address | Path | Password |
+|----------|---------------|----------------|----------------|
+| young where special young fruit clip forum scorpion garden much income patch | [0x6b045a27d6e4eea250dc7526ef378c6c7a3d9de8](https://debank.com/profile/0x6b045a27d6e4eea250dc7526ef378c6c7a3d9de8/history) | m/44'/60'/0'/0/0 | crack |
+| total pupil enlist ecology hungry usage weapon guess blade mistake name mouse | [0x835406ef92dedafc55a566b5e53955ce8e85e5a1](https://debank.com/profile/0x835406ef92dedafc55a566b5e53955ce8e85e5a1/history) | m/44'/60'/0'/0/0 | google |
+| error equal onion apple pudding kitten zero damp wink mom pudding leg | [0x5e7c985f47b2629a19696d6924ad8bfad88f8b81](https://debank.com/profile/0x5e7c985f47b2629a19696d6924ad8bfad88f8b81/history) | m/44'/60'/0'/0/0 | wrestling |
+<hr>
+
+# 12. Electrum v1 (In development)
 
 # Other sections:
 
@@ -491,6 +525,7 @@ ETH and tokens<br>
 HEX base 160<br>
 Hashes160 must be on a new line in text format!<br>
 ```bip39scan.exe -a hashes160.txt -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --save-bin new_hex160.bin --bits 256```<br>
+
 Text file more 12 GB USE --bloom 2048M<br>
 Text file more 50 GB USE --bloom 4096M<br>
 Text file more 120 GB USE --bloom 8192M<br>
@@ -748,6 +783,7 @@ OPTIONS:
         --hmac FILE       Read passwords from the file, one per line, and use them as HMAC keys to generate BIP39 seeds.
         --hmac1 FILE      Same as --hmac but doesn't check intermediate iterations.
         --iterations NUM  In the --hmac mode: number of hmac iterations to perform.
+        --pass FILE       Read passphrases from the file, one per line.
     MNEMO                 Mnemonic template, up to 24 words. Can contain placeholders '*'. If less than
                           12 words, the rest are placeholders. Each '*' is replaced with one of 2048 words (or one of the words
                           from the dictionary specified with --words option).
