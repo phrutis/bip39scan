@@ -41,7 +41,7 @@ Supports multi patch and rmd160 hashes.
 > ```chmod +x bip39scan```<br>
 > ```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt ...```
 
-## Modes:
+# MODES:
 
 # 1. Sequential search words:
 **Replace unknown words with** **\***<br>
