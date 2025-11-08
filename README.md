@@ -1,6 +1,10 @@
 # bip39scan - New reliase v 7.7.7 (04/11/2025) - ~~$500~~ -> $200 t.me/cuda8
 ### 🚀 The fastest brute force mnemonics MultiGPU program in the world! 🚀<br>
 
+> [!TIP]
+> **Official store of the program [t.me/cuda8](https://t.me/cuda8)**
+> 
+
 > [!IMPORTANT]
 > Update! For those who bought versions 3.2, 4.0.1, 5.5.5 the password is the same. <br>
 > All future updates and versions will have the same password!
