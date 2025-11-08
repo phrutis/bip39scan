@@ -7,7 +7,7 @@
 > **Buy only from the official channel: [t.me/cuda8](https://t.me/cuda8)**
 
 > [!IMPORTANT]
-> Update! For those who bought versions 3.2, 4.0.1, 5.5.5 the password is the same.** <br>
+> Update! For those who bought versions 3.2, 4.0.1, 5.5.5 the password is the same. <br>
 > All future updates and versions will have the same password!
 
 > [!NOTE]
