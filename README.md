@@ -807,7 +807,7 @@ click the big Download button
 Install Nvidia CUDA 12.9: https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local<br>
 choose Windows version
  
-Install OpenSSL from https://slproweb.com/download/Win64OpenSSL-3_0_16.msi
+Install OpenSSL from https://slproweb.com/download/Win64OpenSSL-3_6_0.exe
 
 Go to the "Sources" folder<br>
 In cmd run: 
